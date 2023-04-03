@@ -30,7 +30,7 @@ provider "aws" {
 resource "random_pet" "sg" {}
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "288693765212-bucket-dev"
+  bucket = "288693765212-dev"
 
   tags = {
     Name        = "My Dev bucket"
