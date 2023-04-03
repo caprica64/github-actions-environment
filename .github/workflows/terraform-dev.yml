@@ -3,7 +3,7 @@ name: "Terraform"
 on:
   push:
     branches:
-      - main
+      - dev
   pull_request:
 
 jobs:
@@ -74,7 +74,6 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-      # Commented out so it does not run in main branch anymore.
-      # - name: Terraform Apply
-      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      #   run: terraform apply -auto-approve -input=false
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve -input=false
