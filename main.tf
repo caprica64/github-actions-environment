@@ -29,7 +29,7 @@ provider "aws" {
 
 resource "random_pet" "random_bucket_name" {
   prefix = "github-actions-${var.environment}"
-  lenght = 1
+  length = 1
 }
 
 resource "aws_s3_bucket" "bucket" {
