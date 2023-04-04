@@ -13,8 +13,6 @@ terraform {
     }
   }
   required_version = ">= 1.1.0"
-
-  backend "remote" {
   
   # Bellow used when running Terraform init with remote backend setup > https://developer.hashicorp.com/terraform/language/settings/backends/remote#init
   #  hostname = "app.terraform.io"
