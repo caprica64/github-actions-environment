@@ -74,7 +74,7 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
       - name: Print env variable
-        run: echo $ENVIRONMENT
+        run: echo "Environment is " ${{ vars.ENVIRONMENT }}
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
