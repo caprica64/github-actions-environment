@@ -28,8 +28,6 @@ jobs:
 
       - name: Terraform Init
         id: init
-        env:
-          TF_WORKSPACE: "dev"
         run: terraform init
       
       - name: Terraform Validate
@@ -78,9 +76,6 @@ jobs:
         
       - name: Print env variable
         run: echo "Environment is " ${{ vars.ENVIRONMENT }}
-
-      - name: Print TF_WORKSPACE
-        run: echo "TF_WORKSPACE is " ${{ vars.TF_WORKSPACE }}
 
       - name: Print Reference
         run: echo "GitHub reference is " ${{ vars.GITHUB_REF_NAME}}
