@@ -1,6 +1,0 @@
-  cloud {
-    organization = "caprica"
-
-    workspaces {
-      name = "GitHub-Actions-Environments"
-    }
