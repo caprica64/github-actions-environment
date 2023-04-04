@@ -18,7 +18,8 @@ terraform {
     organization = "caprica"
 
     workspaces {
-      name = "GitHub-Actions-Environments-dev"
+      #name = "GitHub-Actions-Environments-dev"
+      prefix = "GitHub-Actions-Environments"
     }
   }
 }
