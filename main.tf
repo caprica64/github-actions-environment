@@ -61,7 +61,7 @@ resource "aws_s3_bucket" "bucket" {
   bucket = random_pet.random_bucket_name.id
 
   tags = {
-    Name        = "My Dev bucket"
+    Name        = "My GitHub Actions bucket"
     Environment = var.environment
   }
 }
