@@ -5,9 +5,3 @@ variable "environment" {
     type = string
     default = "development"
 } 
-
-variable "workspace_name" {
-    description = "Workspace name in TFC"
-    type = string
-    default = "GitHub-Actions-Environments"
-} 

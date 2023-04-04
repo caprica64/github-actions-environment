@@ -14,12 +14,12 @@ terraform {
   }
   required_version = ">= 1.1.0"
 
-  cloud {
-    organization = "caprica"
-
-    workspaces {
-      name = "GitHub-Actions-Environments"
-    }
+#   cloud {
+#     organization = "caprica"
+# 
+#     workspaces {
+#       name = "GitHub-Actions-Environments"
+#     }
   }
 }
 
