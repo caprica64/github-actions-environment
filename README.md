@@ -6,4 +6,5 @@ This repo is a companion repo to the [Automate Terraform with GitHub Actions tut
 ##Log
 
 - trying to execute a dev workspace using prefix
+- getting out TF workspace var from workspace
 
