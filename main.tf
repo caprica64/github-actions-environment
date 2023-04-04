@@ -27,10 +27,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "random_pet" "sg" {}
+resource "random_pet" "random_bucket_name" {}
+  prefix = "github-actions"
+  #lenght = 1
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "288693765212-dev-bucket"
+  bucket = aws_s3_bucket.random_bucket_name.id
 
   tags = {
     Name        = "My Dev bucket"
