@@ -33,7 +33,7 @@ resource "random_pet" "random_bucket_name" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = aws_s3_bucket.random_bucket_name.id
+  bucket = random_pet.random_bucket_name.id
 
   tags = {
     Name        = "My Dev bucket"
