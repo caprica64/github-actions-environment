@@ -1,4 +1,4 @@
-name: "Terraform-Dev"
+name: "Terraform"
 
 on:
   push:
@@ -73,16 +73,7 @@ jobs:
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-        
-      - name: Print env variable
-        run: echo "Environment is " ${{ vars.ENVIRONMENT }}
 
-      - name: Print Reference
-        run: echo "GitHub reference is " ${{ vars.GITHUB_REF_NAME}}
-
-      - name: Print Job
-        run: echo "GitHub job is " ${{ vars.GITHUB_JOB}}
-             
       - name: Terraform Apply
         if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
