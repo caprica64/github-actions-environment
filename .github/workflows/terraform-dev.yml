@@ -30,7 +30,7 @@ jobs:
         id: init
         env:
           TF_WORKSPACE: "dev"
-        run: terraform init -backend-config=backend.config
+        run: terraform init -backend-config=config.remote.tfbackend
       
       - name: Terraform Validate
         id: validate

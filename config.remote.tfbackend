@@ -1,0 +1,5 @@
+# config.remote.tfbackend
+workspaces { prefix = "GitHub-Actions-Environments" }
+hostname     = "app.terraform.io"
+organization = "caprica"
+
