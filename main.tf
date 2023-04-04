@@ -23,6 +23,11 @@ terraform {
   }
 }
 
+terraform {
+  backend "terraformcloud" {}
+}
+
+
 provider "aws" {
   region = "us-east-1"
 }
