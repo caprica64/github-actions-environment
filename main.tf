@@ -14,19 +14,13 @@ terraform {
   }
   required_version = ">= 1.1.0"
 
-#   cloud {
-#     organization = "caprica"
-# 
-#     workspaces {
-#       #name = "GitHub-Actions-Environments-dev"
-#       prefix = "GitHub-Actions-Environments-"
-#     }
-#   }
-
-    backend "remote" {
-    hostname = "app.terraform.io"
+  cloud {
     organization = "caprica"
-    prefix = "GitHub-Actions-Environments-"
+
+    workspaces {
+      #name = "GitHub-Actions-Environments-dev"
+      prefix = "GitHub-Actions-Environments-"
+    }
   }
 }
 
