@@ -78,7 +78,7 @@ jobs:
 
       - name: Terraform Workspace Select
         id: select_workspace
-        run: terraform workspace select ${{ vars.TF_WORKSPACE }}
+        run: terraform workspace select dev
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
