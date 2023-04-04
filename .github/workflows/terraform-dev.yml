@@ -28,7 +28,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init -backend-config="prefix=GitHub-Actions-Environments-/"
       
       - name: Terraform Validate
         id: validate
