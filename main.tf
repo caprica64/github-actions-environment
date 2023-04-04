@@ -18,7 +18,7 @@ terraform {
     organization = "caprica"
 
     workspaces {
-      name = "GitHub-Actions-Environments"
+      name = "GitHub-Actions-Environments ${var.environment}"
     }
   }
 }
@@ -28,8 +28,8 @@ provider "aws" {
 }
 
 resource "random_pet" "random_bucket_name" {
-  prefix = "github-actions"
- # lenght = 1
+  prefix = "github-actions-${var.environment}"
+  lenght = 1
 }
 
 resource "aws_s3_bucket" "bucket" {
