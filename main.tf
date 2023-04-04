@@ -27,9 +27,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "random_pet" "random_bucket_name" {}
+resource "random_pet" "random_bucket_name" {
   prefix = "github-actions"
-  lenght = 1
+ # lenght = 1
+}
 
 resource "aws_s3_bucket" "bucket" {
   bucket = aws_s3_bucket.random_bucket_name.id
