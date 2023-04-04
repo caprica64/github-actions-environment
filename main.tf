@@ -14,21 +14,24 @@ terraform {
   }
   required_version = ">= 1.1.0"
 
-backend "remote" {}
+  backend "remote" {
+  
+  # Bellow used when running Terraform init with remote backend setup > https://developer.hashicorp.com/terraform/language/settings/backends/remote#init
+  #  hostname = "app.terraform.io"
+  #  organization = "caprica"
+  
+  cloud {
+    organization = "caprica"
 
-#   backend "remote" {
-#     hostname = "app.terraform.io"
-#     organization = "caprica"
-#   
-#   # cloud {
-#   #   organization = "caprica"
-# 
-#     workspaces {
-#       #name = "GitHub-Actions-Environments-dev"
-#       prefix = "GitHub-Actions-Environments"
-#     }
-#   }
+    workspaces {
+      name = "GitHub-Actions-Environments-dev"
+      #prefix = "GitHub-Actions-Environments" # <<-use when running multiple workspace environments
+    }
+  }
 }
+
+#backend "remote" {} # <<-use end setting up terraform init -backend-config=config.remote.dev.tfbackend
+
 
 provider "aws" {
   region = "us-east-1"
