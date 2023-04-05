@@ -30,7 +30,7 @@ jobs:
       - name: Terraform Init
         id: init
         env:
-          TF_WORKSPACE: "dev"
+          TF_WORKSPACE: ${{ vars.TF_WORKSPACE }}
         run: terraform init
       
       - name: Terraform Validate
