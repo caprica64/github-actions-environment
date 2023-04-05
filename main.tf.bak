@@ -1,28 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-# terraform {
-#   required_providers {
-#     aws = {
-#       source  = "hashicorp/aws"
-#       version = "4.52.0"
-#     }
-#     random = {
-#       source  = "hashicorp/random"
-#       version = "3.4.3"
-#     }
-#   }
-#   required_version = ">= 1.1.0"
-# 
-#   cloud {
-#     organization = "caprica"
-# 
-#     workspaces {
-#       name = "GitHub-Actions-Environments-dev"
-#     }
-#   }
-# }
-
 terraform {
   required_providers {
     aws = {
@@ -36,19 +14,22 @@ terraform {
   }
   required_version = ">= 1.1.0"
   
-  backend "remote" {
-    hostname = "app.terraform.io"
+  cloud {
     organization = "caprica"
 
     workspaces {
-      prefix = "GitHub-Actions-Environments-"
+      #name = "GitHub-Actions-Environments-dev"
+      prefix = "GitHub-Actions-Environments-" # <<-use when running multiple workspace environments
     }
   }
 }
 
+#  backend "remote" {} # <<-use end setting up terraform init -backend-config=config.remote.dev.tfbackend
 
-#TO-DO set up above to Cloud {} and use GitHub env vars
-
+#  Bellow used when running Terraform init with remote backend setup > https://developer.hashicorp.com/terraform/language/settings/backends/remote#init
+#  backend "remote" {
+#  hostname = "app.terraform.io"
+#  organization = "caprica"
 
 provider "aws" {
   region = "us-east-1"
@@ -63,9 +44,8 @@ resource "aws_s3_bucket" "bucket" {
   bucket = random_pet.random_bucket_name.id
 
   tags = {
-    Name        = "My GitHub Actions bucket"
+    Name        = "My Dev bucket"
     Environment = var.environment
-    Project     = var.project
   }
 }
 
