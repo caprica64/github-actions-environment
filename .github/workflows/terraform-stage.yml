@@ -1,4 +1,4 @@
-name: "Terraform"
+name: "Terraform-Stage"
 
 on:
   push:
@@ -8,6 +8,10 @@ on:
 
 jobs:
   terraform:
+    environment: "stage"
+    env:
+      TF_VAR_project: "${{ vars.TF_VAR_PROJECT }}"
+      project: "${{ vars.TF_VAR_PROJECT }}"
     name: "Terraform"
     runs-on: ubuntu-latest
     permissions:
@@ -29,7 +33,7 @@ jobs:
       - name: Terraform Init
         id: init
         env:
-          TF_WORKSPACE: "stage"
+          TF_WORKSPACE: ${{ vars.TF_WORKSPACE }}
         run: terraform init
       
       - name: Terraform Validate
