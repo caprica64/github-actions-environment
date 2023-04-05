@@ -10,6 +10,7 @@ jobs:
   terraform:
     environment: "dev"
     env:
+      TF_VAR_project: "${{ vars.TF_VAR_PROJECT }}"
       project: "${{ vars.TF_VAR_PROJECT }}"
     name: "Terraform"
     runs-on: ubuntu-latest
