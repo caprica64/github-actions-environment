@@ -5,3 +5,9 @@ variable "environment" {
     type = string
     default = "test"
 } 
+
+variable "project" {
+    description = "Proj name"
+    type = string
+    #default = "test"
+} 

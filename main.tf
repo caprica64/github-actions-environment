@@ -46,7 +46,7 @@ terraform {
   }
 }
 
-
+#TO-DO set up above to Cloud {} and use GitHub env vars
 
 provider "aws" {
   region = "us-east-1"
@@ -63,6 +63,7 @@ resource "aws_s3_bucket" "bucket" {
   tags = {
     Name        = "My GitHub Actions bucket"
     Environment = var.environment
+    Project     = var.project
   }
 }
 

@@ -8,6 +8,7 @@ on:
 
 jobs:
   terraform:
+    environment: "dev"
     name: "Terraform"
     runs-on: ubuntu-latest
     permissions:
