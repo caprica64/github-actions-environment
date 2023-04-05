@@ -6,7 +6,7 @@ variable "environment" {
     default = "test"
 } 
 
-variable "project" {
+variable "PROJECT" {
     description = "Proj name"
     type = string
     default = "test"

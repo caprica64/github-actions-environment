@@ -63,7 +63,7 @@ resource "aws_s3_bucket" "bucket" {
   tags = {
     Name        = "My GitHub Actions bucket"
     Environment = var.environment
-    Project     = var.project
+    Project     = var.PROJECT
   }
 }
 
