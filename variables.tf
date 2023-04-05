@@ -9,5 +9,5 @@ variable "environment" {
 variable "PROJECT" {
     description = "Proj name"
     type = string
-    default = "test"
+    #default = "test"
 } 
