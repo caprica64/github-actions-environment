@@ -76,5 +76,5 @@ resource "aws_s3_bucket_acl" "example" {
 
 output "s3_bucket_name" {
   description = "Name of the bucket"
-  value       = aws_s3-bucket.bucket.id
+  value       = aws_s3_bucket.bucket.id
 }
