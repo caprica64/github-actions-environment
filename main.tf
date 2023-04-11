@@ -73,3 +73,8 @@ resource "aws_s3_bucket_acl" "example" {
   bucket = aws_s3_bucket.bucket.id
   acl    = "private"
 }
+
+output "s3_bucket_name" {
+  description = "Name of the bucket"
+  value       = aws_s3-bucket.bucket.id
+}
